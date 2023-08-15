@@ -11,12 +11,12 @@ const cookieParser = require("cookie-parser");
 const multer = require("multer");
 const uploadMiddleware = multer({ dest: "uploads/" });
 const fs = require("fs");
-require('dotenv').config();
+//require('dotenv').config();
 
 const salt = bcrypt.genSaltSync(10);
 const secret = "asdfe45we45w345wegw345werjktjwertkj";
 //change origin from localhost:3000 to github website
-app.use(cors({ credentials: true, origin: "https://cseaotter.github.io/blog-web/" }));
+app.use(cors({ credentials: true, origin: "https://cseaotter.github.io/blog-web" }));
 app.use(express.json());
 app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));
@@ -148,4 +148,5 @@ app.get("/post/:id", async (req, res) => {
   res.json(postDoc);
 });
 
-app.listen(process.env.PORT || 4000);
+//process.env.PORT || 
+app.listen("https://blog-web-api-ce9j.onrender.com" || 4000);
