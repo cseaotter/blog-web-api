@@ -16,7 +16,9 @@ const fs = require("fs");
 const salt = bcrypt.genSaltSync(10);
 const secret = "asdfe45we45w345wegw345werjktjwertkj";
 //change origin from localhost:3000 to github website
-app.use(cors({ credentials: true, origin: "https://cseaotter.github.io/blog-web" }));
+// github: https://cseaotter.github.io/blog-web
+// render: https://blog-g3bb.onrender.com
+app.use(cors({ credentials: true, origin: "https://blog-g3bb.onrender.com" }));
 app.use(express.json());
 app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));
